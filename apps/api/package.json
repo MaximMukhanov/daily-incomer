@@ -7,7 +7,7 @@
     "clean": "rm -rf dist",
     "dev": "nodemon --exec \"node -r esbuild-register ./src/index.ts\" -e .ts",
     "start": "node -r esbuild-register ./src/index.ts",
-    "lint": "eslint --fix && prettier --write",
+    "lint": "eslint --fix && prettier --write **/*.{ts,tsx,js,jsx}",
     "test": "jest --detectOpenHandles"
   },
   "dependencies": {

@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "tsc src/index.tsx",
+    "build": "tsc src/index.ts",
     "dev": "tsc src/index.tsx --watch",
-    "lint": "eslint --fix && prettier --write",
+    "lint": "eslint --fix && prettier --write **/*.{ts,tsx,js,jsx}",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
