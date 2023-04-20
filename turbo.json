@@ -4,12 +4,11 @@
   "pipeline": {
     "build": {
       "outputs": [".next/**", "!.next/cache/**"],
-      "dependsOn": ["^build", "^db:generate"]
+      "dependsOn": ["^build"]
     },
     "dev": {
       "cache": false,
-      "persistent": true,
-      "dependsOn": ["^db:generate"]
+      "persistent": true
     },
     "db:generate": {
       "cache": false
