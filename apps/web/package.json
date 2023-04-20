@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:style": "stylelint \"**/*.(scss|css)$\"",
+    "test": "jest --detectOpenHandles --passWithNoTests",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf .next"
   },
   "dependencies": {

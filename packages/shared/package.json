@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "tsc src/index.ts",
+    "build": "tsc src/index.ts --noEmit",
     "dev": "tsc src/index.tsx --watch",
     "lint": "eslint --fix && prettier --write **/*.{ts,tsx,js,jsx}",
+    "test": "jest --detectOpenHandles --passWithNoTests",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {

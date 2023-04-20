@@ -8,7 +8,7 @@
     "dev": "nodemon --exec \"node -r esbuild-register ./src/index.ts\" -e .ts",
     "start": "node -r esbuild-register ./src/index.ts",
     "lint": "eslint --fix && prettier --write **/*.{ts,tsx,js,jsx}",
-    "test": "jest --detectOpenHandles"
+    "test": "jest --detectOpenHandles --passWithNoTests"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
