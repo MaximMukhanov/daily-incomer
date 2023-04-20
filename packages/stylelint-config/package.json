@@ -1,0 +1,19 @@
+{
+  "name": "stylelint-config",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint --fix && prettier --write",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "devDependencies": {
+    "eslint-config-incomer-web": "*",
+    "postcss": "^8.4.22",
+    "stylelint": "^15.5.0",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-config-standard-scss": "^8.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

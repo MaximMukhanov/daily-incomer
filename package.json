@@ -1,0 +1,39 @@
+{
+  "private": true,
+  "engines": {
+    "node": ">=16.16.0"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "lint:style": "turbo run lint:style",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch",
+    "db:generate": "turbo run db:generate",
+    "db:push": "turbo run db:push",
+    "prepare": "husky install",
+    "clean": "turbo run clean"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.1",
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
+    "turbo": "^1.9.3",
+    "husky": "^8.0.3",
+    "eslint": "^7.32.0",
+    "prettier": "^2.5.1",
+    "typescript": "^5.0.4",
+    "jest-config": "*",
+    "stylelint-config": "*",
+    "lint-staged-config": "*",
+    "eslint-config-incomer-api": "*",
+    "eslint-config-incomer-web": "*"
+  },
+  "name": "daily-incomer",
+  "packageManager": "yarn@1.22.19",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
