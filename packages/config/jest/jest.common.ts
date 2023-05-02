@@ -3,12 +3,12 @@ import type { Config } from '@jest/types';
 const commonConfig: Config.InitialOptions = {
   preset: 'ts-jest',
   roots: ['<rootDir>'],
-  setupFiles: ['<rootDir>/setupMock.ts'],
+  setupFiles: ['./setupMock.ts'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
     '^.+\\.module\\.(css|sass|scss)$':
       '<rootDir>/jest/__mocks__/objectProxy.ts',
-    '^.+\\.(css|sass|scss)$': '<rootDir>/__mocks__/styleMock.ts',
+    '^.+\\.(css|sass|scss)$': './__mocks__/styleMock.ts',
     '^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp)$':
       '<rootDir>/__mocks__/fileMock.ts',
     '\\.svg$': '<rootDir>/__mocks__/svgMock.ts',
