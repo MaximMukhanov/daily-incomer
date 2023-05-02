@@ -8,12 +8,10 @@ const commonConfig: Config.InitialOptions = {
   setupFiles: ['./setupMock.ts'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
-    '^.+\\.module\\.(css|sass|scss)$':
-      '<rootDir>/jest/__mocks__/objectProxy.ts',
-    '^.+\\.(css|sass|scss)$': './__mocks__/styleMock.ts',
-    '^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp)$':
-      '<rootDir>/__mocks__/fileMock.ts',
-    '\\.svg$': '<rootDir>/__mocks__/svgMock.ts',
+    '^.+\\.module\\.(css|sass|scss)$': `${pathToCommon}/jest/__mocks__/objectProxy.ts`,
+    '^.+\\.(css|sass|scss)$': `${pathToCommon}/__mocks__/styleMock.ts`,
+    '^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp)$': `${pathToCommon}/__mocks__/fileMock.ts`,
+    '\\.svg$': `${pathToCommon}/__mocks__/svgMock.ts`,
   },
   modulePathIgnorePatterns: ['<rootDir>/**/node_modules', '<rootDir>/**/dist'],
   coverageDirectory: '<rootDir>/coverage/',
