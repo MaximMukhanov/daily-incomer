@@ -5,7 +5,7 @@ const pathToCommon = path.join(process.cwd(), '.');
 const commonConfig: Config.InitialOptions = {
   preset: 'ts-jest',
   roots: [pathToCommon],
-  setupFiles: [`${pathToCommon}/setupMock.ts`],
+  setupFiles: [`${process.cwd()}/setupMock.ts`],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
     '^.+\\.module\\.(css|sass|scss)$': `${pathToCommon}/jest/__mocks__/objectProxy.ts`,
