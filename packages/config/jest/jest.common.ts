@@ -1,8 +1,10 @@
 import type { Config } from '@jest/types';
+import path from 'path';
+const pathToCommon = path.join(process.cwd(), '.');
 
 const commonConfig: Config.InitialOptions = {
   preset: 'ts-jest',
-  roots: ['<rootDir>/../../packages/config/'],
+  roots: [pathToCommon],
   setupFiles: ['./setupMock.ts'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
