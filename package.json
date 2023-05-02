@@ -1,37 +1,38 @@
 {
-  "private": true,
-  "engines": {
-    "node": ">=16.16.0"
-  },
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "lint:style": "turbo run lint:style",
-    "test": "turbo run test",
-    "test:watch": "turbo run test:watch",
-    "db:generate": "turbo run db:generate",
-    "db:push": "turbo run db:push",
-    "prepare": "husky install",
-    "clean": "turbo run clean"
-  },
+  "name": "daily-incomer",
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
-    "turbo": "^1.9.3",
+    "config": "*",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.39.0",
     "husky": "^8.0.3",
-    "eslint": "^7.32.0",
-    "prettier": "^2.5.1",
-    "typescript": "^5.0.4",
-    "jest-config": "*",
-    "stylelint-config": "*",
-    "lint-staged-config": "*",
-    "eslint-config-incomer-api": "*",
-    "eslint-config-incomer-web": "*"
+    "lint-staged": "^13.2.1",
+    "prettier": "^2.8.8",
+    "syncpack": "^9.8.6",
+    "turbo": "^1.9.3",
+    "typescript": "^5.0.4"
   },
-  "name": "daily-incomer",
+  "engines": {
+    "node": ">=16.16.0"
+  },
   "packageManager": "yarn@1.22.19",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "db:generate": "turbo run db:generate",
+    "db:push": "turbo run db:push",
+    "deps:format": "syncpack format",
+    "deps:sync": "syncpack fix-mismatches",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "lint:style": "turbo run lint:style",
+    "prepare": "husky install",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch"
+  },
   "workspaces": [
     "apps/*",
     "packages/*"

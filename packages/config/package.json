@@ -1,0 +1,30 @@
+{
+  "name": "config",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@testing-library/dom": "^9.2.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.5.0",
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "jest": "^29.5.0",
+    "postcss": "^8.4.22",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "stylelint": "^15.5.0",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-config-standard-scss": "^8.0.0",
+    "ts-jest": "^29.1.0",
+    "tsconfig": "*",
+    "eslint-config-incomer-api": "*"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "lint": "eslint --fix && prettier --write **/*.{ts,tsx,js,jsx}"
+  }
+}

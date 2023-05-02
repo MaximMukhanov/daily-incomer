@@ -1,19 +1,24 @@
 {
   "name": "shared",
   "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {
-    "build": "tsc src/index.ts --noEmit",
-    "dev": "tsc src/index.tsx --watch",
-    "lint": "eslint --fix && prettier --write **/*.{ts,tsx,js,jsx}",
-    "test": "jest --detectOpenHandles --passWithNoTests",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
-  },
   "devDependencies": {
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "config": "*",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.8",
     "react": "^18.2.0",
-    "tsconfig": "*",
-    "eslint-config-incomer-web": "*"
+    "tsconfig": "*"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc src/index.ts --noEmit",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "lint": "eslint --fix && prettier --write **/*.{ts,tsx,js,jsx}",
+    "test": "jest --detectOpenHandles --passWithNoTests"
   }
 }

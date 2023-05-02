@@ -3,6 +3,7 @@
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
     "stylelint.vscode-stylelint",
+    "NuclleaR.vscode-extension-auto-import",
     "Prisma.prisma"
   ]
 }

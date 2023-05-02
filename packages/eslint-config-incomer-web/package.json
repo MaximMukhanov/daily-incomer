@@ -1,19 +1,19 @@
 {
   "name": "eslint-config-incomer-web",
   "version": "0.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "scripts": {
-    "lint": "eslint --fix && prettier --write **/*.{ts,tsx,js,jsx}",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
-  },
   "dependencies": {
     "eslint-config-next": "latest",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-react": "7.29.4",
-    "eslint-config-turbo": "latest"
+    "eslint-config-turbo": "latest",
+    "eslint-plugin-react": "7.29.4"
   },
+  "license": "MIT",
+  "main": "index.js",
   "publishConfig": {
     "access": "public"
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "lint": "eslint --fix && prettier --write **/*.{ts,tsx,js,jsx}"
   }
 }

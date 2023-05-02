@@ -1,16 +1,6 @@
 {
   "name": "web",
   "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "lint:style": "stylelint \"**/*.(scss|css)$\"",
-    "test": "jest --detectOpenHandles --passWithNoTests",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf .next"
-  },
   "dependencies": {
     "next": "latest",
     "react": "^18.2.0",
@@ -20,10 +10,21 @@
   "devDependencies": {
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
-    "sass": "^1.62.0",
+    "config": "*",
+    "eslint-config-incomer-web": "*",
     "react": "^18.2.0",
+    "sass": "^1.62.0",
     "shared": "*",
-    "tsconfig": "*",
-    "eslint-config-incomer-web": "*"
+    "tsconfig": "*"
+  },
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf .next",
+    "dev": "next dev",
+    "lint": "next lint",
+    "lint:style": "stylelint \"**/*.(scss|css)$\" --allow-empty-input",
+    "start": "next start",
+    "test": "jest --detectOpenHandles --passWithNoTests"
   }
 }
