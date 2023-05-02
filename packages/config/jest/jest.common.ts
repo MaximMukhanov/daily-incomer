@@ -2,7 +2,7 @@ import type { Config } from '@jest/types';
 
 const commonConfig: Config.InitialOptions = {
   preset: 'ts-jest',
-  roots: ['.'],
+  roots: ['packages/config'],
   setupFiles: ['./setupMock.ts'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
