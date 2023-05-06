@@ -2,6 +2,7 @@
   "name": "eslint-config-incomer-web",
   "version": "0.0.0",
   "dependencies": {
+    "eslint": "^8.39.0",
     "eslint-config-next": "latest",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-turbo": "latest",

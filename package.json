@@ -17,7 +17,7 @@
   "engines": {
     "node": ">=16.16.0"
   },
-  "packageManager": "yarn@1.22.19",
+  "packageManager": "yarn@3.5.1",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -29,7 +29,8 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "lint:style": "turbo run lint:style",
-    "prepare": "husky install",
+    "postinstall": "husky install",
+    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('Package manager not supported! Use YARN to install!')\"",
     "test": "turbo run test",
     "test:watch": "turbo run test:watch"
   },
