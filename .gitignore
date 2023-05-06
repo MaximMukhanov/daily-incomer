@@ -16,10 +16,11 @@ node_modules
 coverage
 .nyc_output
 
-# next.js
+# build
 .next/
 out/
 build
+dist
 
 # misc
 .DS_Store
