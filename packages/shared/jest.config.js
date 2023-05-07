@@ -1,3 +1,3 @@
 module.exports = {
-  preset: ['config/jest'],
+  preset: 'config/jest',
 };
