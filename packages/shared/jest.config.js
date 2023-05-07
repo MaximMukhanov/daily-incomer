@@ -1,5 +1,3 @@
-const config = {
-  preset: [],
+module.exports = {
+  preset: ['config/jest'],
 };
-
-export default config;
