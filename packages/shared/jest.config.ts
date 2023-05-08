@@ -1,7 +1,5 @@
-import preset from 'config/jest';
+import type { Config } from 'jest';
 
-const config = {
-  ...preset,
-};
+const config: Config = {};
 
 export default config;

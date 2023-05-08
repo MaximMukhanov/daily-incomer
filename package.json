@@ -4,12 +4,12 @@
     "@changesets/cli": "^2.26.1",
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
-    "config": "*",
     "cross-env": "^7.0.3",
     "eslint": "^8.40.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
+    "rimraf": "5.0.0",
     "syncpack": "^9.8.6",
     "turbo": "^1.9.3",
     "typescript": "^5.0.4"
@@ -32,6 +32,7 @@
     "postinstall": "husky install",
     "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('Package manager not supported! Use YARN to install!')\"",
     "test": "turbo run test",
+    "test:e2e": "turbo run test:e2e",
     "test:watch": "turbo run test:watch"
   },
   "workspaces": [

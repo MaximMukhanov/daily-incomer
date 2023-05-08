@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-incomer-web",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "dependencies": {
     "eslint": "^8.40.0",
     "eslint-config-next": "latest",

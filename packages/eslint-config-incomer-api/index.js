@@ -2,6 +2,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module',
+    ecmaVersion: 'latest',
   },
   plugins: ['@typescript-eslint/eslint-plugin'],
   extends: [
@@ -12,8 +13,9 @@ module.exports = {
   env: {
     node: true,
     jest: true,
+    es6: true,
   },
-  ignorePatterns: ['.eslintrc.js'],
+  ignorePatterns: ['!.eslintrc.cjs'],
   rules: {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',

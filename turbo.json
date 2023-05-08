@@ -24,6 +24,10 @@
       "outputs": ["coverage/**"],
       "dependsOn": ["lint"]
     },
+    "test:e2e": {
+      "outputs": ["coverage/**"],
+      "dependsOn": ["lint"]
+    },
     "clean": {
       "cache": false
     }
