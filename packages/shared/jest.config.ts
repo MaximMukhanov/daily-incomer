@@ -1,5 +1,7 @@
+import preset from 'config/jest';
+
 const config = {
-  preset: 'node_modules/config/jest/index.ts',
+  ...preset,
 };
 
 export default config;
