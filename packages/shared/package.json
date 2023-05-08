@@ -1,19 +1,27 @@
 {
   "name": "shared",
   "version": "0.0.0",
+  "devDependencies": {
+    "@types/jest": "^29.5.1",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "eslint": "^8.40.0",
+    "eslint-config-incomer-api": "*",
+    "jest": "^29.5.0",
+    "jest-preset": "*",
+    "prettier": "^2.8.8",
+    "react": "^18.2.0",
+    "stylelint": "^15.6.1",
+    "stylelint-config-incomer": "*",
+    "tsconfig": "*"
+  },
+  "type": "module",
   "license": "MIT",
   "scripts": {
     "build": "tsc src/index.ts --noEmit",
-    "dev": "tsc src/index.tsx --watch",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "lint": "eslint --fix && prettier --write **/*.{ts,tsx,js,jsx}",
-    "test": "jest --detectOpenHandles --passWithNoTests",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.37",
-    "@types/react-dom": "^18.0.11",
-    "react": "^18.2.0",
-    "tsconfig": "*",
-    "eslint-config-incomer-web": "*"
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watch"
   }
 }

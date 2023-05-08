@@ -1,4 +1,4 @@
 module.exports = {
   root: true,
-  extends: ['incomer-web'],
+  extends: ['incomer-api'],
 };

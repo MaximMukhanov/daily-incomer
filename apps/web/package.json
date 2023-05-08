@@ -1,29 +1,36 @@
 {
   "name": "web",
   "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "lint:style": "stylelint \"**/*.(scss|css)$\"",
-    "test": "jest --detectOpenHandles --passWithNoTests",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf .next"
-  },
   "dependencies": {
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rimraf": "5.0.0",
     "ui": "*"
   },
   "devDependencies": {
-    "@types/react": "^18.0.37",
-    "@types/react-dom": "^18.0.11",
-    "sass": "^1.62.0",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "eslint-config-incomer-web": "*",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "jest-preset": "*",
     "react": "^18.2.0",
+    "sass": "^1.62.1",
     "shared": "*",
-    "tsconfig": "*",
-    "eslint-config-incomer-web": "*"
+    "stylelint": "^15.6.1",
+    "stylelint-config-incomer": "*",
+    "tsconfig": "*"
+  },
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "clean": "rimraf .turbo && rimraf node_modules && rimraf dist && rimraf .next",
+    "dev": "next dev",
+    "lint": "next lint",
+    "lint:style": "stylelint '**/*.(scss|css)$' --allow-empty-input",
+    "prebuild": "rimraf .next",
+    "start": "next start",
+    "test": "jest --detectOpenHandles --passWithNoTests"
   }
 }

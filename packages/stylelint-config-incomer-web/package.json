@@ -1,0 +1,19 @@
+{
+  "name": "stylelint-config-incomer",
+  "version": "1.0.0",
+  "devDependencies": {
+    "postcss": "^8.4.22",
+    "stylelint": "^15.6.1",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-config-standard-scss": "^8.0.0"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "lint": "eslint --fix && prettier --write **/*.{ts,tsx,js,jsx}"
+  }
+}
