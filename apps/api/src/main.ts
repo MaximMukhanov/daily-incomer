@@ -14,7 +14,7 @@ async function bootstrap() {
     type: VersioningType.URI,
   });
   app.use(helmet());
-  await app.listen(3001);
+  await app.listen(parseInt(process.env.PORT, 10) || 3001);
 
   if (module.hot) {
     module.hot.accept();
