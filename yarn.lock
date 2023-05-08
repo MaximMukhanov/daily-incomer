@@ -1514,20 +1514,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/devtools-integration@npm:^0.1.4":
-  version: 0.1.4
-  resolution: "@nestjs/devtools-integration@npm:0.1.4"
-  dependencies:
-    chalk: ^4.1.2
-    node-fetch: ^2.6.9
-  peerDependencies:
-    "@nestjs/common": ^9.3.7
-    "@nestjs/core": ^9.3.7
-    reflect-metadata: ^0.1.12
-  checksum: 04c363f076d5859863e317026d9604346309d6d6a53b0e8f84769ebceec6bd1b3efa7ff48522c6f04b3fafaf6cc4282ef534257668ab14be814283865eff5d3c
-  languageName: node
-  linkType: hard
-
 "@nestjs/platform-express@npm:^9.4.0":
   version: 9.4.0
   resolution: "@nestjs/platform-express@npm:9.4.0"
@@ -2826,7 +2812,6 @@ __metadata:
     "@nestjs/common": ^9.4.0
     "@nestjs/config": ^2.3.1
     "@nestjs/core": ^9.4.0
-    "@nestjs/devtools-integration": ^0.1.4
     "@nestjs/platform-express": ^9.4.0
     "@nestjs/schedule": ^2.2.1
     "@nestjs/schematics": ^9.1.0
@@ -8278,7 +8263,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.9":
+"node-fetch@npm:^2.6.1":
   version: 2.6.9
   resolution: "node-fetch@npm:2.6.9"
   dependencies:

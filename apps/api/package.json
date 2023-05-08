@@ -7,7 +7,6 @@
     "@nestjs/common": "^9.4.0",
     "@nestjs/config": "^2.3.1",
     "@nestjs/core": "^9.4.0",
-    "@nestjs/devtools-integration": "^0.1.4",
     "@nestjs/platform-express": "^9.4.0",
     "@nestjs/schedule": "^2.2.1",
     "cookie-parser": "^1.4.6",
