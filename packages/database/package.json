@@ -4,13 +4,17 @@
   "dependencies": {
     "@prisma/client": "^4.12.0",
     "eslint-config-incomer-api": "*",
+    "rimraf": "5.0.0",
     "shared": "*"
   },
   "devDependencies": {
-    "prisma": "^4.12.0"
+    "prisma": "^4.12.0",
+    "tsup": "^6.7.0"
   },
   "main": "./index.ts",
   "scripts": {
+    "prebuild": "rimraf dist yarn db:generate",
+    "build": "tsup",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "db:generate": "prisma generate",
     "db:push": "prisma db push --skip-generate",
