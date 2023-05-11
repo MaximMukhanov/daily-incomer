@@ -3,7 +3,7 @@ import preset from 'jest-preset';
 
 const config: Config = {
   ...preset,
-  displayName: 'UI Package Tests',
+  displayName: 'UI Package(unit) Tests',
   testEnvironment: 'jest-environment-jsdom',
 };
 

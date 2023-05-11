@@ -3,7 +3,7 @@ import preset from 'jest-preset';
 
 const config: Config = {
   ...preset,
-  displayName: 'API App Tests',
+  displayName: 'API App(unit) Tests',
   testEnvironment: 'node',
 };
 
