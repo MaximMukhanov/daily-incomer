@@ -1,81 +1,52 @@
-# Turborepo starter
+# Daily Incomer
 
-This is an official starter Turborepo.
+## Технические спецификации
 
-## Using this example
+1.**Package manager** - Проект использует **yarn v1.22.19**, так как на данный момент взаимодействие с версиями **berry** и выше все еще в тесте
 
-Run the following command:
+2.**Development** - Используется локальное развертывание базы данных с помощью **docker compose** и **dev** скрипт для запуска самих приложений одновременно
 
-```bash
-npx create-turbo@latest
-```
-
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
+При работе с БД рекомендуется прочесть документацию [**PrismaORM**](https://www.prisma.io/) - для более гибкой работы с нашей **ORM(Object Relation Model)**.
 
 ```bash
-cd my-turborepo
-pnpm build
+
+yarn db:dev # Запускает Docker контейнер с локальной базой данных
+
+yarn dev # Запускает все приложения монорепозитория. ВАЖНО! Соблюдайте последовательность запуска в оизбежание ошибок из-за отсутствия БД
+
+yarn db:push # Отправляет изменения из `prisma.schema` в базу данных, прогонять каждый раз, когда меняется схема
+
+
 ```
 
-### Develop
+3.**Work Flow** - работаем по стандартном [**GitFlow**](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow#:~:text=What%20is%20Gitflow%3F,lived%20branches%20and%20larger%20commits.).
 
-To develop all apps and packages, run the following command:
+**main** - ветка для релизов
+**develop** - ветка для разработки, от нее мы создаем ветки для задач
+**feature/**- ветки по конкретным задачам, создаются от **develop**
+**hotfix/\*\*** - ветки с фиксами критичных багов, могут быть созданы прямо от **main**
 
-```bash
-cd my-turborepo
-pnpm dev
-```
+По префиксам для коммитов см. комментарии в [**commitlint.config.cjs**](./commitlint.config.cjs).
 
-### Remote Caching
+## Архитектура проекта
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+[**./apps**](./apps/) - Приложения монорепозитория
+apps
+├── web # [**Next.js**](https://nextjs.org/docs/) приложение
+│ ├── hooks # Кастомные хуки
+│ ├── pages # [Раутинг](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts) приложения
+│ └── services # Внутренние сервисы
+└── api # [**Nest.js**](https://docs.nestjs.com/) приложение
+├── prisma # Схема [**PrismaORM**](https://www.prisma.io/)
+├── src # [**root**](./apps/api/src/) дирректория всего проекта, здесь хранятся модули nestjs
+└── test # **e2e**(End To End) тесты
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```bash
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```bash
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+[**./packages**](./packages/) - Внутреннией пакеты и конфигурация монорепозитория
+packages
+├── stylelint-config # [**Stylelint**](https://stylelint.io/) конфигурация
+├── jest-preset # [**Jest**](https://jestjs.io/) конфигурация
+├── shared # Переиспользуемый код между другими пакетами
+├── eslint-config # [**Eslint**](https://eslint.org/) конфигурация
+├── tsconfig # [**Typescript**](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) конфигурации
+└── ui # [**Nest.js**](https://docs.nestjs.com/) приложение
+└── components # [**React**](https://react.dev/) компоненты для работы с [**web**](./apps/web/) приложением

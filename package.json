@@ -1,17 +1,19 @@
 {
   "name": "daily-incomer",
-  "devDependencies": {
+  "dependencies": {
     "@changesets/cli": "^2.26.1",
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
+    "@manypkg/cli": "^0.20.0",
     "cross-env": "^7.0.3",
+    "dotenv-cli": "^7.2.1",
     "eslint": "^8.40.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "rimraf": "5.0.0",
     "syncpack": "^9.8.6",
-    "turbo": "^1.9.3",
+    "turbo": "^1.9.4",
     "typescript": "^5.0.4"
   },
   "engines": {
@@ -29,11 +31,12 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "lint:style": "turbo run lint:style",
-    "postinstall": "husky install",
+    "postinstall": "husky install && manypkg check",
     "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('Package manager not supported! Use YARN to install!')\"",
     "test": "turbo run test",
     "test:e2e": "turbo run test:e2e",
-    "test:watch": "turbo run test:watch"
+    "test:watch": "turbo run test:watch",
+    "db:dev": "docker compose up -d"
   },
   "workspaces": [
     "apps/*",
