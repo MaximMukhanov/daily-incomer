@@ -18,7 +18,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "tsc src/index.ts --noEmit",
+    "build": "tsc --noEmit",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "lint": "eslint --fix && prettier --write **/*.{ts,tsx,js,jsx}",
     "test": "jest --passWithNoTests",

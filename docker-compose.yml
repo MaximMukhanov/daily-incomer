@@ -1,29 +1,17 @@
-version: '3'
-
+# ФАЙЛ ДЛЯ ЛОКАЛЬНОЙ РАЗРАБОТКИ
+version: '3.8'
 services:
-  web:
-    container_name: web
-    build:
-      context: .
-      dockerfile: ./apps/web/Dockerfile
-    restart: always
+  db:
+    image: 'postgres:15.3'
     ports:
-      - 3000:3000
-    networks:
-      - app_network
-  api:
-    container_name: api
-    build:
-      context: .
-      dockerfile: ./apps/api/Dockerfile
-    restart: always
-    ports:
-      - 3001:3001
-    networks:
-      - app_network
+      - '5432:5432'
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=devdb
+      - POSTGRES_PASSWORD=devdb
+      - POSTGRES_DB=devdb
 
-# Define a network, which allows containers to communicate
-# with each other, by using their container name as a hostname
 networks:
-  app_network:
+  dev_db:
     external: true

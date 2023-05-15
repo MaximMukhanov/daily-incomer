@@ -26,8 +26,7 @@ async function bootstrap() {
     type: VersioningType.URI,
   });
   app.use(helmet());
-  // app.use(csurf());
-  await app.listen(parseInt(process.env.PORT, 10) || 3001);
+  await app.listen(parseInt(process.env.API_PORT, 10) || 3001);
 
   if (module.hot) {
     module.hot.accept();
