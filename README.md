@@ -36,7 +36,7 @@ apps
 │ ├── hooks # Кастомные хуки  
 │ ├── pages # [Раутинг](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts) приложения  
 │ └── services # Внутренние сервисы  
-└── api # [**Nest.js**](https://docs.nestjs.com/) приложение  
+├── api # [**Nest.js**](https://docs.nestjs.com/) приложение  
 ├── prisma # Схема [**PrismaORM**](https://www.prisma.io/)  
 ├── src # [**root**](./apps/api/src/) дирректория всего проекта, здесь хранятся модули nestjs  
 └── test # **e2e**(End To End) тесты  
@@ -48,5 +48,5 @@ packages
 ├── shared # Переиспользуемый код между другими пакетами  
 ├── eslint-config # [**Eslint**](https://eslint.org/) конфигурация  
 ├── tsconfig # [**Typescript**](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) конфигурации  
-└── ui # [**Nest.js**](https://docs.nestjs.com/) приложение  
+├── ui # [**Nest.js**](https://docs.nestjs.com/) приложение  
 └── components # [**React**](https://react.dev/) компоненты для работы с [**web**](./apps/web/) приложением  
