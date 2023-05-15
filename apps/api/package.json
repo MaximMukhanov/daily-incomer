@@ -45,7 +45,7 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "build": "yarn db:generate && nest build",
+    "build": "nest build",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "debug": "nest start --debug --watch",
     "dev": "nest build --webpack --webpackPath webpack-hmr.config.cjs --watch",
@@ -61,6 +61,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./jest-e2e.config.ts",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "postinstall": "prisma generate"
   }
 }
