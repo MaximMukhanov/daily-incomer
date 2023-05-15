@@ -45,7 +45,7 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "build": "nest build",
+    "build": "yarn db:henerate && nest build",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "debug": "nest start --debug --watch",
     "dev": "nest build --webpack --webpackPath webpack-hmr.config.cjs --watch",
