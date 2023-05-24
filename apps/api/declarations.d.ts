@@ -10,6 +10,12 @@ declare global {
       POSTGRES_HOST: string;
       POSTGRES_PASSWORD: string;
       POSTGRES_DATABASE: string;
+      GOOGLE_CLIENT_ID: string;
+      GOOGLE_CLIENT_SECRET: string;
+      GOOGLE_CALLBACK_URL: string;
+      JWT_ACCESS_SECRET: string;
+      JWT_REFRESH_SECRET: string;
+      KV_URL: string;
     }
   }
 }

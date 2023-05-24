@@ -13,7 +13,7 @@
     "prettier": "^2.8.8",
     "rimraf": "5.0.0",
     "syncpack": "^9.8.6",
-    "turbo": "^1.9.4",
+    "turbo": "^1.9.6",
     "typescript": "^5.0.4"
   },
   "engines": {
@@ -24,6 +24,7 @@
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
+    "db:dev": "docker compose up -d",
     "db:generate": "turbo run db:generate",
     "db:push": "turbo run db:push",
     "deps:format": "syncpack format",
@@ -33,10 +34,10 @@
     "lint:style": "turbo run lint:style",
     "postinstall": "husky install && manypkg check",
     "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('Package manager not supported! Use YARN to install!')\"",
+    "start": "turbo run start",
     "test": "turbo run test",
     "test:e2e": "turbo run test:e2e",
-    "test:watch": "turbo run test:watch",
-    "db:dev": "docker compose up -d"
+    "test:watch": "turbo run test:watch"
   },
   "workspaces": [
     "apps/*",

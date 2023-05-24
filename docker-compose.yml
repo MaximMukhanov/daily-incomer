@@ -6,11 +6,26 @@ services:
     ports:
       - '5432:5432'
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - db:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=devdb
       - POSTGRES_PASSWORD=devdb
       - POSTGRES_DB=devdb
+
+  cache:
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass rdevpass
+    volumes:
+      - cache:/data
+
+volumes:
+  db:
+    driver: local
+  cache:
+    driver: local
 
 networks:
   dev_db:
